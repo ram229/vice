@@ -3,8 +3,23 @@
   "airports": {
     "KBOI": {
       "approaches": {
-        "R8L": {
+        "X8L": {
           "cifp_id": "RX28L"
+        },
+        "Y8L": {
+          "cifp_id": "RY28L"
+        },
+        "R8L": {
+          "cifp_id": "RZ28L"
+        },
+        "X8R": {
+          "cifp_id": "RX28R"
+        },
+        "Y8R": {
+          "cifp_id": "RY28R"
+        },
+        "R8R": {
+          "cifp_id": "RZ28R"
         },
         "I8R": {
           "cifp_id": "I28R"
@@ -125,11 +140,11 @@
   "KOURT4": {
     "arrivals": [
       {
-        "spawn": "DERSO@0.2",
+        "spawn": "REAPS@0.1",
         "star": "KOURT4",
-        "initial_controller": "SLC_17_CTR",
-        "initial_altitude": 15000,
-        "initial_speed": 260,
+        "initial_controller": "SLC_31_CTR",
+        "initial_altitude": 24000,
+        "initial_speed": 270,
         "expect_approach": null,
         "airlines": {
           "KBOI": [
@@ -149,11 +164,11 @@
   "KYAAN4": {
     "arrivals": [
       {
-        "spawn": "DEVLE@0.8",
+        "spawn": "DEVLE@0.1",
         "star": "KYAAN4",
-        "initial_controller": "SLC_17_CTR",
+        "initial_controller": "SLC_30_CTR",
         "initial_altitude": 16000,
-        "initial_speed": 270,
+        "initial_speed": 260,
         "expect_approach": null,
         "airlines": {
           "KBOI": [
@@ -175,7 +190,7 @@
       {
         "spawn": "PELYT@0.5",
         "star": "SADYL4",
-        "initial_controller": "SLC_17_CTR",
+        "initial_controller": "SLC_30_CTR",
         "initial_altitude": 21000,
         "initial_speed": 270,
         "expect_approach": null,
@@ -205,11 +220,11 @@
   "SPUUD4": {
     "arrivals": [
       {
-        "spawn": "ORYDA@0.9",
+        "spawn": "BROPH@0.1",
         "star": "SPUUD4",
-        "initial_controller": "SLC_17_CTR",
-        "initial_altitude": 13000,
-        "initial_speed": 250,
+        "initial_controller": "SLC_31_CTR",
+        "initial_altitude": 18000,
+        "initial_speed": 270,
         "expect_approach": null,
         "airlines": {
           "KBOI": [
@@ -238,19 +253,33 @@
       "scope_char": "T",
       "sector_id": "1T"
     },
-    "BOI_APP": {
+    "BOI_A_APP": {
       "frequency": 126900,
       "radio_name": "Big Sky Approach",
-      "scope_char": "W",
-      "sector_id": "1W"
+      "scope_char": "A",
+      "sector_id": "1A"
     },
-    "SLC_17_CTR": {
-      "frequency": 126850,
+    "BOI_G_APP": {
+      "frequency": 119600,
+      "radio_name": "Big Sky Approach",
+      "scope_char": "G",
+      "sector_id": "1G"
+    },
+    "SLC_30_CTR": {
+      "frequency": 128050,
       "radio_name": "Salt Lake City Center",
       "facility_id": "C",
       "eram_facility": true,
       "scope_char": "C",
-      "sector_id": "C17"
+      "sector_id": "C30"
+    },
+    "SLC_31_CTR": {
+      "frequency": 118050,
+      "radio_name": "Salt Lake City Center",
+      "facility_id": "C",
+      "eram_facility": true,
+      "scope_char": "C",
+      "sector_id": "C31"
     }
   },
   "default_scenario": "Land West",
@@ -262,6 +291,10 @@
         {
           "airport": "KBOI",
           "runway": "28L"
+        },
+        {
+          "airport": "KBOI",
+          "runway": "28R"
         }
       ],
       "arrivals": {
@@ -278,11 +311,12 @@
           "KBOI": 5
         }
       },
-      "solo_controller": "BOI_APP",
+      "solo_controller": "BOI_G_APP",
       "controllers": [
         "BOI_TWR",
-        "BOI_APP",
-        "SLC_17_CTR"
+        "BOI_G_APP",
+        "SLC_30_CTR",
+        "SLC_31_CTR"
       ],
       "departure_runways": [
         {
@@ -321,11 +355,12 @@
           "KBOI": 5
         }
       },
-      "solo_controller": "BOI_APP",
+      "solo_controller": "BOI_G_APP",
       "controllers": [
         "BOI_TWR",
-        "BOI_APP",
-        "SLC_17_CTR"
+        "BOI_G_APP",
+        "SLC_30_CTR",
+        "SLC_31_CTR"
       ],
       "departure_runways": [
         {
